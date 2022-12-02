@@ -30,3 +30,12 @@ jobs:
       with:
         name: artifact
         path: Test.class
+  deployDEV:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v3.0.1
+      with:
+        # Artifact name
+        name: artifact
+    - run: java Test
